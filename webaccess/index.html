@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 1</title>
+</head>
+<body>
+   <H1>INFO-H590 Spring 2020</H1>
+   <h2>Project 1: Web accessibility Evaulation</h2> 
+   <p>Name: Sowmya Chandra</p>
+   <p>IU Address: sowchan@iu.edu</p>
+   <p>In this project we had to evaluate a robust, multi-page website on the basis of accessibility. We had to identify 3 accessibility problems using a web accessibility tool. For my project, I used the <a href="https://wave.webaim.org/" >WAVE tool. </a> With that, we had to list the WCAG 2.1 Success Criterion that was violated, with a brief description. After that,we had to come up with recommended accessibility improvements, whether on the basis of code, design or content. We used the WAI template to report the suggestions. </p>
+    <H3>Website Information</H3>
+    <p>Name of website: LingCars <br>
+        Purpose of site: To provide car leasing services in the UK. <br>
+        Base URL of site: https://www.lingscars.com/ (Links to an external site.)</p>
+        <h3> Problem #1: The contrast between the foreground and background colors is very low. </h3>
+        <p> Problem Description: In some text and images, the color of the text doesn’t contrast enough,
+            which makes it hard to read for people with low vision. Text is present that has a contrast ratio
+            less than 4.5:1, or large text (larger than 18 point or 14 point bold) has a contrast ratio less than
+            3:1. It’s also relevant for text with background images, where the color of the background should
+            have enough contrast with the text.  <br>
+            Problem Impact: Users with visual impairment would have difficulty reading text if it’s color is
+            too close to the background. Readers often use contrast as a way to interpret the letters, with its
+            shape visible
+            </p>
+            <h4>Relevant WCAG 2.1 Guidelines and Success Criteria:</h4>
+            <p>1.4.3 Contrast (Minimum) (Level AA): Text and images of text have a contrast ratio of at least
+                4.5:1.</p>
+            <h4>Solution</h4>
+            <p>To increase the contrast between text and background, through making
+                the text color black(#000000) or a dark grey of #9E9E9E.</p>
+            <xmp>            <p style="color: #9e9e9e;">terms and conditions</p>
+            <p style="color: black;">Terms and conditions</p></xmp>
+
+
+
+        <h3> Problem #2: Image doesn't have alternative text on website </h3>
+        <p>Problem Description: In order to get pictures across to the screen reader, it should have
+            alternative text. Some images on the screen do not have alternative text, and so if the user were
+            to use screen reader, they wouldn’t be able to understand the text because it doesn’t have a
+            description. <br>
+            Problem Impact: Users with vision impairment who use screen readers would find it difficult to
+            understand what the image is without alternative text in it. If the image isn’t available, it would
+            be hard to interpret it. Thus, all images should have an alternate text attribute.</p>
+    <h4>Relevant WCAG 2.1 Guidelines and Success Criteria:</h4>
+    <p>1.1.1 Non-text Content (Level A): Images, form image buttons, and image map hotspots have
+        appropriate, equivalent alternative text.
+        </p>
+    <h4>Solution</h4>
+    <p>While inserting an image, insert the alternate attribute to the tag</p>
+    <xmp>        <img src="img/nissan leaf.JPG.JPG" alt="Nissan Leaf">
+        <img src="img/checker flag.JPG" alt="Checker Flag">
+        <img src="img/lightning bolt.JPG" alt="lightning bolt">
+    </xmp>
+
+    <h3> Problem #3: Adjecent links go to the same URL. </h3>
+        <p>
+            problem description: Since adjecent links go to the same URL, it can re redundant for the user, especially someone who is using assistive technology like a screen reader.
+            Problem Impact: Users who use assistive technologies like screen readers may feel confused.
+
+        </p>
+
+        <h4>WCAG 2.0 checkpoints and techniques-2.4.4 Link Purpose (In Context) (Level
+            A)- </h4>
+    <p>The purpose of each link (or form image button or image map hotspot) can be
+        determined from the link text alone, or from the link text and its context (e.g.,
+        surrounding text, list item, previous heading, or table headers).
+        </p>
+
+    <h4>solution</h4>
+    <p> Solutions- to combine redundant links into one link and remove redundant links
+        from the image.We should include an alternative text for the image.
+        </p>
+        <xmp>
+            original code: 
+
+            <a href="http://www.lingscars.com/customers.php">
+            <img src="https://images.lingscars.com/images/stats/customers.gif" alt=""
+            border="0">
+            </a>
+            </td></tr>
+            <tr>
+            <td colspan="2">
+            <a href="http://www.lingscars.com/customers.php" class="text"
+            style="color: rgb(255, 0, 0); font-size: 20px;">
+            <strong>
+            CLICK to VIEW!
+            </strong>
+            </a>
+            revised code
+
+            <img src="https://images.lingscars.com/images/stats/customers.gif"
+            alt="different browsers as heads on cartoon bodies" border="0">
+            </td></tr>
+            <tr>
+            <td colspan="2">
+            <a href="http://www.lingscars.com/customers.php" class="text" style="color: rgb(255, 0, 0); font-size: 20px;">
+            <strong>
+            CLICK to VIEW!
+            </strong>
+            </a>
+
+
+        </xmp>
+
+<h3> Problem #4: One of the Elements of the website has a "Marquee" tool. </h3>  
+
+<p>
+    Problem Description: There is a Marquee element present on the website, which presents text
+that scrolls across the page, out of the users control. Users cannot stop to read or evaluate the
+text. It could also be a distracting factor to users, especially those with some cognitive
+disabilities. The text scrolling is too fast, and with a lot of text that makes it hard to follow. <br>
+Problem Impact: Users with cognitive disabilities would find it really hard to read and follow
+this text. It could be very distracting to users, since it's always in motion. Since users are unable
+to stop the text, they have to read quickly, which can be a hindrance to some.
+</p>
+<h4>Relevant WCAG 2.1 Guidelines and Success Criteria:</h4> 
+<p>
+    2.2.6 Timeouts(WCAG 2.1 Level AAA): Users must be warned of any timeout that could result
+in data loss, unless the data is preserved for longer than 20 hours of user inactivity. <br>
+2.2.2 Pause, Stop, Hide (Level A) : Automatically moving, blinking, or scrolling content (such
+as carousels, marquees, or animations) that lasts longer than 5 seconds can be paused, stopped, or
+hidden by the user.
+
+</p>
+<H4>Solution</H4>
+<p>Replace marquee tool with standard HTML element and style it with CSS.</p>
+<xmp><p>Leader of the Pack - The UK's favorite car leasing website! </p></xmp>
+<p>Or add a stop and start button for the marquee</p><xmp>
+            <marquee behavior="scroll" direction="left" scrollamount="10" id="marquee2"><p>Leader of the Pack - The UK's favorite car leasing website!</p></marquee>
+            <input type="button" value="Stop Marquee 1" onClick="document.getElementById('marquee2').stop();"/>
+            <input type="button" value="Start Marquee 1" onClick="document.getElementById('marquee2').start();"/><br /></xmp>
+
+
+
+
+
+
+</body>
+</html>
